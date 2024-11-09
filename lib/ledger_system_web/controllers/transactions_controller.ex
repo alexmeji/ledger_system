@@ -37,6 +37,7 @@ defmodule LedgerSystemWeb.TransactionsController do
         "amount" => :erlang.float_to_binary(amount, decimals: 2),
         "type" => type
       })
+
       {:ok, transaction}
     end
   end

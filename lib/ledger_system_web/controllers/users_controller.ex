@@ -17,7 +17,8 @@ defmodule LedgerSystemWeb.UsersController do
   end
 
   def create(conn, %{"name" => name, "email" => email, "password" => password}) do
-    with {:ok, %User{} = user} <- Users.create_user(%{name: name, email: email, password: password}),
+    with {:ok, %User{} = user} <-
+           Users.create_user(%{name: name, email: email, password: password}),
          {:ok, %Account{} = _account} <-
            Accounts.create_account(%{"user_id" => user.id, "balance" => 0}) do
       conn

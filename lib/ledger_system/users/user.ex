@@ -5,10 +5,10 @@ defmodule LedgerSystem.Users.User do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "users" do
-    field :name, :string
-    field :password, :string
-    field :email, :string
-    has_many :accounts, LedgerSystem.Accounts.Account
+    field(:name, :string)
+    field(:password, :string)
+    field(:email, :string)
+    has_many(:accounts, LedgerSystem.Accounts.Account)
 
     timestamps(type: :utc_datetime)
   end

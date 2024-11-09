@@ -6,7 +6,8 @@ defmodule LedgerSystem.TransactionsTest do
   alias LedgerSystem.Transactions
 
   def create_user_fixture do
-    {:ok, user} = Users.create_user(%{
+    {:ok, user} =
+      Users.create_user(%{
         name: "Alex",
         email: "me@me.com",
         password: "password"
@@ -30,7 +31,9 @@ defmodule LedgerSystem.TransactionsTest do
   describe "transactions" do
     test "create_transaction/1 creates a transaction" do
       account = create_account_fixture()
-      {:ok, transaction} = Transactions.create_transaction(%{
+
+      {:ok, transaction} =
+        Transactions.create_transaction(%{
           account_id: account.id,
           type: "debit",
           amount: 50
@@ -46,7 +49,9 @@ defmodule LedgerSystem.TransactionsTest do
 
     test "get_transaction/1 returns the transaction with given id" do
       account = create_account_fixture()
-      {:ok, transaction} = Transactions.create_transaction(%{
+
+      {:ok, transaction} =
+        Transactions.create_transaction(%{
           account_id: account.id,
           type: "debit",
           amount: 50
@@ -58,7 +63,9 @@ defmodule LedgerSystem.TransactionsTest do
 
     test "list_transactions/0 returns all transactions" do
       account = create_account_fixture()
-      {:ok, _} = Transactions.create_transaction(%{
+
+      {:ok, _} =
+        Transactions.create_transaction(%{
           account_id: account.id,
           type: "debit",
           amount: 50
@@ -69,7 +76,9 @@ defmodule LedgerSystem.TransactionsTest do
 
     test "update_transaction/1 updates the transaction" do
       account = create_account_fixture()
-      {:ok, transaction} = Transactions.create_transaction(%{
+
+      {:ok, transaction} =
+        Transactions.create_transaction(%{
           account_id: account.id,
           type: "debit",
           amount: 50
@@ -81,7 +90,9 @@ defmodule LedgerSystem.TransactionsTest do
 
     test "delete_transaction/1 deletes the transaction" do
       account = create_account_fixture()
-      {:ok, transaction} = Transactions.create_transaction(%{
+
+      {:ok, transaction} =
+        Transactions.create_transaction(%{
           account_id: account.id,
           type: "debit",
           amount: 50
@@ -93,7 +104,9 @@ defmodule LedgerSystem.TransactionsTest do
 
     test "change_transaction/2" do
       account = create_account_fixture()
-      {:ok, transaction} = Transactions.create_transaction(%{
+
+      {:ok, transaction} =
+        Transactions.create_transaction(%{
           account_id: account.id,
           type: "debit",
           amount: 50

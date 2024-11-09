@@ -5,8 +5,8 @@ defmodule LedgerSystem.Accounts.Account do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "accounts" do
-    field :balance, :decimal
-    belongs_to :user, LedgerSystem.Users.User
+    field(:balance, :decimal)
+    belongs_to(:user, LedgerSystem.Users.User)
 
     timestamps(type: :utc_datetime)
   end

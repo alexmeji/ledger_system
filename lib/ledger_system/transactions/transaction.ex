@@ -5,9 +5,9 @@ defmodule LedgerSystem.Transactions.Transaction do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "transactions" do
-    field :type, Ecto.Enum, values: [:debit, :credit]
-    field :amount, :decimal
-    belongs_to :account, LedgerSystem.Accounts.Account
+    field(:type, Ecto.Enum, values: [:debit, :credit])
+    field(:amount, :decimal)
+    belongs_to(:account, LedgerSystem.Accounts.Account)
 
     timestamps(type: :utc_datetime)
   end

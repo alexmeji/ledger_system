@@ -18,7 +18,10 @@ defmodule LedgerSystemWeb.UsersJSON do
       id: user.id,
       name: user.name,
       email: user.email,
-      accounts: Enum.map(user.accounts, fn account -> %{"account" => account.id, "balance" => account.balance} end)
+      accounts:
+        Enum.map(user.accounts, fn account ->
+          %{"account" => account.id, "balance" => account.balance}
+        end)
     }
   end
 

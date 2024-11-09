@@ -4,7 +4,8 @@ defmodule LedgerSystem.UsersTest do
   alias LedgerSystem.Users
 
   def create_user_fixture do
-    {:ok, user} = Users.create_user(%{
+    {:ok, user} =
+      Users.create_user(%{
         name: "Alex",
         email: "me@me.com",
         password: "password"
