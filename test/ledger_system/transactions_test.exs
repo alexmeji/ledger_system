@@ -1,4 +1,6 @@
 defmodule LedgerSystem.TransactionsTest do
+  @moduledoc false
+
   use LedgerSystem.DataCase
 
   alias LedgerSystem.Users
@@ -99,7 +101,7 @@ defmodule LedgerSystem.TransactionsTest do
         })
 
       assert Transactions.delete_transaction(transaction)
-      assert length(Transactions.list_transactions()) == 0
+      assert Enum.empty?(Transactions.list_transactions())
     end
 
     test "change_transaction/2" do

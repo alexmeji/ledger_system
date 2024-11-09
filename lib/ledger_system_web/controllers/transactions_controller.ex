@@ -7,7 +7,7 @@ defmodule LedgerSystemWeb.TransactionsController do
 
   def debit(conn, %{"user_id" => user_id, "amount" => amount}) do
     with {:ok, %Transaction{} = transaction} <-
-           createTransactionAndUpdateBalance(user_id, amount, "debit") do
+           create_transaction_and_update_balance(user_id, amount, "debit") do
       conn
       |> put_status(:created)
       |> render(:show, transaction: transaction)
@@ -16,14 +16,14 @@ defmodule LedgerSystemWeb.TransactionsController do
 
   def credit(conn, %{"user_id" => user_id, "amount" => amount}) do
     with {:ok, %Transaction{} = transaction} <-
-           createTransactionAndUpdateBalance(user_id, amount, "credit") do
+           create_transaction_and_update_balance(user_id, amount, "credit") do
       conn
       |> put_status(:created)
       |> render(:show, transaction: transaction)
     end
   end
 
-  defp createTransactionAndUpdateBalance(user_id, amount, type) do
+  defp create_transaction_and_update_balance(user_id, amount, type) do
     with user <- Users.get_user!(user_id),
          account <- Accounts.get_user_account!(user.id),
          {:ok, %Transaction{} = transaction} <-

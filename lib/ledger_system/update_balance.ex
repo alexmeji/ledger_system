@@ -1,4 +1,7 @@
 defmodule LedgerSystem.UpdateBalance.Worker do
+  @moduledoc """
+  This module is responsible for updating the account balance in the system.
+  """
   use GenServer
   require Logger
   alias LedgerSystem.Accounts

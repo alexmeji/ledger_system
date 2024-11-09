@@ -13,7 +13,7 @@ defmodule LedgerSystemWeb.UsersController do
 
   def show(conn, %{"id" => id}) do
     user = Users.get_user!(id)
-    render(conn, :showWithAccount, user: user)
+    render(conn, :show_with_account, user: user)
   end
 
   def create(conn, %{"name" => name, "email" => email, "password" => password}) do

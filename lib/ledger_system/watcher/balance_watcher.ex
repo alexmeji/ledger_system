@@ -1,4 +1,7 @@
 defmodule LedgerSystem.Watcher.BalanceWatcher do
+  @moduledoc """
+  This module is responsible for watching the balance updates in the system.
+  """
   require Logger
   use GenServer
 

@@ -9,7 +9,7 @@ defmodule LedgerSystemWeb.UsersJSON do
     %{data: data(user)}
   end
 
-  def showWithAccount(%{user: user}) do
+  def show_with_account(%{user: user}) do
     %{data: data_with_account(user)}
   end
 

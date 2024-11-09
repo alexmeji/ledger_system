@@ -1,4 +1,5 @@
 defmodule LedgerSystem.AccountsTest do
+  @moduledoc false
   use LedgerSystem.DataCase
 
   alias LedgerSystem.Users
@@ -58,7 +59,7 @@ defmodule LedgerSystem.AccountsTest do
     test "delete_account/1 deletes the account" do
       account = create_account_fixture()
       assert Accounts.delete_account(account)
-      assert length(Accounts.list_accounts()) == 0
+      assert Enum.empty?(Accounts.list_accounts())
     end
 
     test "change_account/2" do

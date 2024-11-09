@@ -1,4 +1,8 @@
 defmodule LedgerSystem.Users.User do
+  @moduledoc """
+  The User schema.
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 

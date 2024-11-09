@@ -1,4 +1,8 @@
 defmodule LedgerSystem.Transactions.Transaction do
+  @moduledoc """
+  The transaction schema.
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
